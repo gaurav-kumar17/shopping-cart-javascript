@@ -110,6 +110,12 @@ let clearCart=()=>{
     localStorage.setItem("data",JSON.stringify(basket));
 }
 
+let checkout=()=>{
+
+  alert("You have successfully placed your order.");
+  // totalAmount();
+  clearCart();
+}
 let totalAmount=()=>{
 
     if(basket.length!=0)
@@ -123,7 +129,7 @@ let totalAmount=()=>{
         // console.log(amount);
         label.innerHTML=`
             <h2>Total Bill : $ ${amount}</h2>
-            <button class="checkout">Checkout</button>
+            <button onclick="checkout()" class="checkout">Checkout</button>
             <button onclick="clearCart()" class="removeAll">Clear Cart</button>
         `;
     }
